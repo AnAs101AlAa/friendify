@@ -14,7 +14,7 @@ export default function AddFriendModal({ onClose }: { onClose: React.Dispatch<Re
 
     const searchFriends = async () => {
         setSubmitting(true);
-        const response = await fetch("http://localhost:3000/api/users/friend", {
+        const response = await fetch("https://friendify-production.up.railway.app/api/users/friend", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -31,7 +31,7 @@ export default function AddFriendModal({ onClose }: { onClose: React.Dispatch<Re
 
     const addFriend = async (friend: User) => {
         try {
-            const response = await fetch("http://localhost:3000/api/users/addfriend", {
+            const response = await fetch("https://friendify-production.up.railway.app/api/users/addfriend", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

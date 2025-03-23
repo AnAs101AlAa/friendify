@@ -12,7 +12,7 @@ export default function MainPage() {
     useEffect(() => {
         const fetchUsrData = async () => {
             try {
-                const response = await fetch("http://localhost:3000/api/users/fetch", {
+                const response = await fetch("https://friendify-production.up.railway.app/api/users/fetch", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

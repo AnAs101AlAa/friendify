@@ -9,7 +9,7 @@ import MessageBubble from "../../components/messageBubble";
 import { FaWolfPackBattalion } from "react-icons/fa";
 import { io } from "socket.io-client";
 
-const socket = io("http://localhost:3000");
+const socket = io("https://friendify-production.up.railway.app");
 
 export default function ChatSegment({ user }: { user: Friend | null }) {
     const [inputMessage, setInputMessage] = useState<string>("");
@@ -20,7 +20,7 @@ export default function ChatSegment({ user }: { user: Friend | null }) {
 
     const fetchMessages = async (messageId: string) => {
         const cleanedMessageId = messageId.replace("'", "");
-        const response = await fetch('http://localhost:3000/api/messages/fetch', {
+        const response = await fetch('https://friendify-production.up.railway.app/api/messages/fetch', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -35,7 +35,7 @@ export default function ChatSegment({ user }: { user: Friend | null }) {
     useEffect(() => {
         if (!user) return;
         const fetchChatData = async () => {
-            const response = await fetch('http://localhost:3000/api/chats/fetch', {
+            const response = await fetch('https://friendify-production.up.railway.app/api/chats/fetch', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -14,7 +14,7 @@ export default function RequestsModal({ onClose }: { onClose: React.Dispatch<Rea
         setSubmitting(true);
         try {
             if (flag) {
-                const response = await fetch("http://localhost:3000/api/users/acceptfriend", {
+                const response = await fetch("https://friendify-production.up.railway.app/api/users/acceptfriend", {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",
@@ -36,7 +36,7 @@ export default function RequestsModal({ onClose }: { onClose: React.Dispatch<Rea
                 }
             }
 
-            const response = await fetch("http://localhost:3000/api/users/rejectfriend", {
+            const response = await fetch("https://friendify-production.up.railway.app/api/users/rejectfriend", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
